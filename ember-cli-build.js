@@ -4,7 +4,11 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
-    // Add options here
+		outputPaths: {
+			vendor: {
+				css: '/assets/css/vendor.css'
+			}
+		}
   });
 
   // Use `app.import` to add additional libraries to the generated
@@ -20,24 +24,16 @@ module.exports = function(defaults) {
   // please specify an object with the list of modules as keys
   // along with the exports of each module as its value.
 
-  app.import('vendor/fontello/fontello.css');
-  app.import('vendor/fontello/font/fontello.ttf', {
-    destDir: 'assets/font'
-  });
-  app.import('vendor/fontello/font/fontello.eot', {
-    destDir: 'assets/font'
-  });
-  app.import('vendor/fontello/font/fontello.svg', {
-    destDir: 'assets/font'
-  });
-  app.import('vendor/fontello/font/fontello.woff', {
-    destDir: 'assets/font'
-  });
-  app.import('vendor/fontello/font/fontello.woff2', {
-    destDir: 'assets/font'
-  });
+  app.import('bower_components/bootswatch/flatly/bootstrap.min.css');
+  app.import('bower_components/font-awesome/css/font-awesome.css');
 
-  app.import('vendor/basscss.min.css');
+  app.import('bower_components/font-awesome/fonts/FontAwesome.otf', { destDir: 'assets/fonts' });
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.eot', { destDir: 'assets/fonts' });
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.svg', { destDir: 'assets/fonts' });
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.ttf', { destDir: 'assets/fonts' });
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff', { destDir: 'assets/fonts' });
+  app.import('bower_components/font-awesome/fonts/fontawesome-webfont.woff2', { destDir: 'assets/fonts' });
+
 
   return app.toTree();
 };

@@ -1,23 +1,22 @@
-<h2>Total friends: {{model.length}}</h2>
-{{#link-to "friends.new"}}Add new friend{{/link-to}}
-<h1>Friends Index</h1>
-<h2>Total friends: {{model.length}}</h2>
-{{#link-to "friends.new"}}Add new friend{{/link-to}}
-<table class="mt3 fit">
-    <thead class="p1 h2">
-    <tr class="white bg-blue">
+<div class="row">
+    <div class="col-md-6"><h2>Total friends: {{model.length}}</h2></div>
+    <div class="col-md-6 text-right">{{#link-to "friends.new" class='btn btn-info'}}<i class="fa fa-user-plus" aria-hidden="true"></i> Add new friend{{/link-to}}</div>
+</div>
+<table class="table table-bordered">
+    <thead>
+    <tr>
         <th>Name</th>
         <th></th>
     </tr>
     </thead>
-    <tbody class="p1 h3">
+    <tbody>
     {{#each model as |friend|}}
         <tr>
-            <td class="border-bottom">
+            <td>
               {{link-to friend.fullName "loans" friend}}
             </td>
-            <td class="border-bottom">
-                <a href="#" {{action "delete" friend}}>Delete</a>
+            <td class="text-center">
+                <button class="btn btn-danger" href="#" {{action "delete" friend}}><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
             </td>
         </tr>
     {{/each}}

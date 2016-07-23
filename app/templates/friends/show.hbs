@@ -1,15 +1,19 @@
-{{link-to 'Back to friends' 'friends'}}
-<div class="clearfix flex p3 h2">
-    <div class="">
-        <img src="http://www.fillmurray.com/200/200">
-        <p class="">{{model.fullName}}</p>
-        <p class="">{{model.email}}</p>
-        <p class="">{{model.twitter}}</p>
-        <p>{{link-to "Lend article" "loans.new"}}</p>
-        <p class="">{{link-to "Edit info" "friends.edit" model}}</p>
-        <p class=""><a href="#" {{action "delete" model}}>Delete</a></p>
+{{#link-to 'friends' class='btn btn-default mb30'}}<i class="fa fa-arrow-circle-o-left" aria-hidden="true"></i> Back to friends{{/link-to}}
+<div class="form-group">
+    <div class="col-md-4">
+        <img src="http://placekitten.com/g/500/500" class="img-circle img-responsive mb30">
+        <div class="text-center">
+            <p class=""><strong>{{model.fullName}}</strong></p>
+            <p class=""><strong>{{model.email}}</strong></p>
+            <p class=""><strong>{{model.twitter}}</strong></p>
+        </div>
+        <div class="btn-group-vertical col-xs-12 mb30">
+            {{#link-to "loans.new" class='btn btn-info'}}<i class="fa fa-bookmark-o" aria-hidden="true"></i> Lend article{{/link-to}}
+            {{#link-to "friends.edit" model class='btn btn-primary'}}<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit info{{/link-to}}
+            <button class="btn btn-danger" {{action "delete" model}}><i class="fa fa-trash-o" aria-hidden="true"></i> Delete</button>
+        </div>
     </div>
-    <div class="flex-auto ml1 loans-container">
+    <div class="col-md-8">
       {{outlet}}
     </div>
 </div>

@@ -15,6 +15,8 @@ Router.map(function() {
       path: ':friend_id'
     }, function () {
       this.route('loans', { resetNamespace: true }, function () {
+      	//TODO: Почему при использовании интерфейса все круто,
+				//TODO: а если вставить просто ссылку в адресную строку, то вылезают ошибки? http://localhost:4200/friends/10/loans
         this.route('new');
       });
     });

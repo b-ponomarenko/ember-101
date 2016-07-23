@@ -1,12 +1,16 @@
-<header class='h2 border'>
-  <nav class='flex item-center bg-white'>
-    {{link-to 'Borrowers' 'index' class='p2'}}
-    {{link-to 'Dashboard' 'index' class='p2 icon-gauge'}}
-    {{link-to 'Friends' 'friends' class='p2 icon-user'}}
-    {{link-to 'New friend' 'friends.new' class='p2 icon-user-plus'}}
-    {{#link-to "articles" class="p2 icon-motorcycle"}}
-        <span></span>Articles
-    {{/link-to}}
-    {{link-to "New Article" "articles.new" class="p2"}}
-  </nav>
-</header>
+<nav class='navbar navbar-inverse navbar-default'>
+    <div class='container'>
+        <div class='navbar-header'>
+            {{link-to 'Borrowers' 'index' class='navbar-brand'}}
+        </div>
+        <div id='navbar' class='collapse navbar-collapse'>
+            <ul class='nav navbar-nav'>
+                <li>{{#link-to 'index' class=''}}<i class="fa fa-2x fa-tachometer" aria-hidden="true"></i> Dashboard{{/link-to}}</li>
+                <li>{{#link-to 'friends' class=''}}<i class="fa fa-2x fa-users" aria-hidden="true"></i> Friends{{/link-to}}</li>
+                <li>{{#link-to 'friends.new' class=''}}<i class="fa fa-2x fa-user-plus" aria-hidden="true"></i> New friend{{/link-to}}</li>
+                <li>{{#link-to 'articles' class=''}}<i class="fa fa-2x fa-book" aria-hidden="true"></i> Articles{{/link-to}}</li>
+                <li>{{#link-to 'articles.new' class='p2'}}<i class="fa fa-2x fa-bookmark" aria-hidden="true"></i> New Article{{/link-to}}</li>
+            </ul>
+        </div>
+    </div>
+</nav>
