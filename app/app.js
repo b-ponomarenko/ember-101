@@ -16,3 +16,6 @@ App = Ember.Application.extend({
 loadInitializers(App, config.modulePrefix);
 
 export default App;
+
+//TODO: Почему после установки кастомного аддона package.json стал read-only
+//TODO: А также при создании нового аддона папка становится read-only
